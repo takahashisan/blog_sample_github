@@ -35,6 +35,14 @@
           <td><%= link_to "いいね", post_favorites_path(post), method: :post %></td>
           <% end %>
 
+        <td>
+          <% if post.user.followed_by? current_user %>
+            <%= link_to "フォロー解除", user_relationships_path(post.user), method: :delete %>
+          <% else %>
+            <%= link_to "フォロー", user_relationships_path(post.user), method: :post %>
+          <% end %>
+        </td>
+
 
         <!-- <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
