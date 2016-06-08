@@ -12,11 +12,13 @@
       <% end %>     
     </li>
 </ul>
+
 <% if @user.favorites.empty? %>
     <div class="list-group-item">
       まだお気に入りされた投稿はありません。
     </div>
 <% end %>
+
 <% @user.favorites.map { |f| f.post }.each do |post| %>
     <h4 class="user">
         <span class="user-name">

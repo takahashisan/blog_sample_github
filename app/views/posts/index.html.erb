@@ -1,16 +1,60 @@
+<div id="tweets-content">
+<div class="container">
+<div class="row">
+
+<div class="col-xs-4 left-content">
+
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Posts</h1>
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %> 
+  </div>
+
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+  <%= f.label :interest_list, "興味・関心（カンマ区切り）" %><br>
+  <%= text_field_tag 'post[interest_list]', @post.interest_list.join(',') %>
+</div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+</div>
+<div class="col-xs-8 right-content">
 
 <table>
   <thead>
-    <tr>
+    <!-- <tr>
       <th></th>
       <th>Title</th>
       <th>Body</th>
       <th>タグ</th>
       <th colspan="3"></th>
-    </tr>
+    </tr> -->
   </thead>
 
  
@@ -29,11 +73,11 @@
         <td><%= render 'posts/tag_list', tag_list: post.interest_list %></td>
 
 
-        <% if post.favorited_by? current_user %>
-          <%= link_to "いいね解除", post_favorites_path(post), method: :delete %>
-          <% else %>
-          <td><%= link_to "いいね!!!!!!", post_favorites_path(post), method: :post %></td>
-          <% end %>
+        <% if post.favorited_by?(current_user) %>
+          <td><%= link_to "いいね解除", post_favorites_path(post), method: :delete %></td>
+        <% else %>
+          <td><%= link_to "いいね!", post_favorites_path(post), method: :post %></td>
+        <% end %>
 
         <td>
           <% if post.user.followed_by? current_user %>
@@ -56,3 +100,8 @@
 <%= paginate @posts %>
 <br>
 <%= link_to 'New Post', new_post_path %>
+
+</div>
+</div>
+</div>
+</div>

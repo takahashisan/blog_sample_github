@@ -24,15 +24,19 @@
       <% end %>     
     </li>
 </ul>
-
-<% @user.posts.each do |post| %>
-    <h4 class="user">
-        <span class="user-name">
-          <%= link_to post.user.name, user_path(post.user) %>
-        </span>
-    <span class="user-id"><%= post.user.name %></span>
-    </h4>
-    <div class="post-body">
-        <%= post.body %>
-    </div>  
+<% @user.followings.each do |u| %>
+    <div>
+        <%= link_to u.name, user_path(u) %>
+        <span>@<%= u.name %></span>
+    </div>
+    <div class="bio">
+        <%= u.bio %>
+    </div>
+    <div class="follow-unfollow">
+        <% if u.followed_by? current_user %>
+          <%= link_to "フォロー解除", follows_user_path(u), method: :delete %>
+        <% else %>
+          <%= link_to "フォロー", follows_user_path(u), method: :post %>
+        <% end %>
+    </div>
 <% end %>
