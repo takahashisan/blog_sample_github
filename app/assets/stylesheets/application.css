@@ -18,6 +18,9 @@
 	margin: 0;
 	padding: 0;
 }
+
+/*nabvar*/
+
 .navbar-default {
     background-color: #ebebeb;
     border-color: #dddddd;
@@ -77,8 +80,20 @@
     background-color: #fbfbfb;
 }
 
-.user-name{
+
+/*user*/
+
+.user-name-prof a:hover{
+    text-decoration: none;
+}
+.user-name-prof{
     font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    
+}
+.user-name{
+    font-size: 18px;
     font-weight: 500;
     color: #555;
 }
@@ -87,6 +102,41 @@
     color: #aaa;
     font-weight: 400;
 }
+
+#users-content{
+    float: none;
+    margin: 0 auto;
+    margin-top:30px;
+    padding: 0px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    border-bottom-width: 3px;
+}
+.user-list-name{
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dddddd;
+}
+.user-list-group{
+    position: relative;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+}
+
+
+/*post*/
+.text,.num,.body-text{
+    color: #666;
+    text-decoration: none;
+}
+.tweets-num{
+    padding: 5px 0;
+}
+.tweets-num:hover{
+    background-color: #f9f9f9;
+}
 .list-group-item{
     position: relative;
     display: block;
@@ -94,6 +144,7 @@
     margin-bottom: -1px;
     background-color: #ffffff;
     border: 1px solid #dddddd;
+    border-bottom: none; 
 }
 .time{
     font-size: 12px;
@@ -154,9 +205,26 @@
 .page_area{
     text-align: center;
 }
+.tweet:hover{
+    background-color: #f9f9f9;
+}
 
 
+/*mypage*/
 
+.mypage-name{
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+.mypage-tweets-num{
+    padding: 10px 0px;
+}
+.mypage-tweets-num:hover{
+    background-color: #ebebeb;
+}
+.mypage-list-group-item{
+    padding-top: 20px;
+}
 
 
 

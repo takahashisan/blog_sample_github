@@ -24,7 +24,7 @@
     <div class="panel-body">
 
       <h4 class="user">
-        <span class="user-name"><%= link_to "#{current_user.username}", user_path(current_user) %></span>
+        <span class="user-name-prof"><%= link_to "#{current_user.username}", user_path(current_user) %></span>
         <span class="user-id">@<%= current_user.name %></span>
       </h4>
 
@@ -93,35 +93,10 @@
   </div>
 <% end %>
 
-<!-- kokokara -->
-  
-  <!-- <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image %> 
-  </div>
-
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </div>
-  <div class="field">
-  <%= f.label :interest_list, "興味・関心（カンマ区切り）" %><br>
-  <%= text_field_tag 'post[interest_list]', @post.interest_list.join(',') %>
-</div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %> -->
 
 </div>
 
-<!-- kokomade -->
+
 
 
 
@@ -142,7 +117,7 @@
 
         
         <div class="tweet-content">
-          <p><%= post.body %></p>
+          <p class="body-text"><%= post.body %></p>
           <p><%= render 'posts/tag_list', tag_list: post.interest_list %></p>
         
           <div class="content-footer">
@@ -173,6 +148,7 @@
 <div class="page_area"><%= paginate @posts %></div>
 <br>
 
+<% end %>
 
 </div><!-- right-content -->
 
