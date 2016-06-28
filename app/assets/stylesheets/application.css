@@ -19,23 +19,23 @@
 	padding: 0;
 }
 .navbar-default {
-    background-color: #f8f8f8;
-    border-color: #e7e7e7;
+    background-color: #ebebeb;
+    border-color: #dddddd;
 }
 .navbar {
     border-radius: 4px;
     position: relative;
     min-height: 50px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
+    margin-bottom: 30px;
+    border: 1px solid block;
 }
 .navbar-header{
-	    margin-left: -15px;
+	margin-left: -15px;
 }
 .navbar-header p {
     float: left;
     padding: 15px 15px;
-    font-size: 27px;
+    font-size: 28px;
     line-height: 20px;
     height: 50px;
 }
@@ -52,6 +52,112 @@
     padding-left: 0;
     list-style: none;
 }
+.new-navbar{
+    float: left;
+    list-style-type: none;
+    margin-right: 100px;
+    font-size: 16px;
+}
+.list-group {
+    margin-bottom: 20px;
+    padding-left: 0;
+}
+.alert-info #notice{
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+#application {
+    background-color: #fbfbfb;
+}
+
+.user-name{
+    font-size: 20px;
+    font-weight: 500;
+    color: #555;
+}
+.user-id{
+    font-size: 14px;
+    color: #aaa;
+    font-weight: 400;
+}
+.list-group-item{
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+}
+.time{
+    font-size: 12px;
+    color: #aaa;
+    font-weight: 400;
+}
+.left-content .panel {
+    box-shadow: none;
+    border-bottom-width: 3px;
+}
+.panel-default {
+    border-color: #dddddd;
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+}
+.num{
+    font-size: 18px;
+}
+.panel-body{
+    border-bottom: 1px solid #dddddd; 
+}
+.user-activity {
+    text-align: center;
+}
+.new-tweet {
+    margin-top: 20px;
+    padding: 0 10px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-controll {
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.btn {
+    margin-top: 10px;
+    width: 100%;
+}
+.page_area{
+    text-align: center;
+}
+
+
+
+
 
 
 

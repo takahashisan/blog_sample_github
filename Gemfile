@@ -31,6 +31,8 @@ gem 'rmagick'
 
 gem 'kaminari'
 
+gem 'kaminari-bootstrap', '~> 3.0.1'
+
 gem 'acts-as-taggable-on', '~> 3.4'
 
 gem 'therubyracer'

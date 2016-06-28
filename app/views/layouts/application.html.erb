@@ -20,17 +20,19 @@
 
         <ul class="nav navbar-nav">
 
-          <li><%= link_to "全ツイート一覧", posts_path %></li>
+          <li><%= link_to "タイムライン", posts_path %></li>
           <li><%= link_to 'ユーザー一覧', users_path %></li>
         </ul>
+
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "マイページ(#{current_user.name})" , user_path(current_user) %></li>
+          <li><%= link_to "マイページ(#{current_user.username})" , user_path(current_user) %></li>
           <li><%= link_to '設定', edit_user_registration_path %> </li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-        
+        </ul>
           
         <% else %>
-          <li><%= link_to "サインイン", new_user_registration_path %> |</li>
+        <ul class="nav navbar-nav navbar-right new-navbar">
+          <li><%= link_to "サインイン", new_user_registration_path %> </li>
           <li><%= link_to "ログイン", new_user_session_path %></ul>
         <% end %>
         </ul>
