@@ -260,6 +260,35 @@
 }
 
 
+/*sessions(new.html.erb) ログイン画面*/
+
+#sessions-new{
+    vertical-align:middle;
+}
+.login-content{
+    padding-top:60px;
+    margin: 0 auto;
+    float: none;
+}
+#sessions-new form{
+    border: 1px solid #ddd;
+    border-bottom-width: 3px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+#sessions-new h2{
+    margin: 0px;
+    padding: 12px;
+    text-align:center;
+    border-bottom: 2px solid #ddd;
+    font-size:18px;
+    font-weight: 600;
+}
+.signup{
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
 
 
 
