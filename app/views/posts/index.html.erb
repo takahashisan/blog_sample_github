@@ -25,7 +25,11 @@
 
       <h4 class="user">
         <span class="user-name-prof">
+        <% if current_user.username.present? %>
         <%= link_to "#{current_user.username}", user_path(current_user) %>
+        <% else %>
+        <%= link_to "#{current_user.name}", user_path(current_user) %>
+        <% end %>
         </span>
         <span class="user-id">@<%= current_user.name %></span>
       </h4>
@@ -113,9 +117,13 @@
     <div class = "tweet list-group-item">
         <h4 class="user">
         <object><span class="user-name">
-
+        <% if post.user.username.present? %>
         <%= link_to "#{post.user.username}", user_path(current_user) %>
-
+        <% elsif post.user.name.blank? %>
+        <%= link_to "名無しさん", user_path(current_user) %>
+        <% else %>
+        <%= link_to "#{post.user.name}", user_path(current_user) %>
+        <% end %>
         </span></object>
         <span class="user-id">@<%= post.user.try(:name) %></span>
 

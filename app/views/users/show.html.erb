@@ -3,7 +3,11 @@
 
       <h4 class="user mypage-name">
         <span class="user-name-prof">
+        <% if current_user.username.present? %>
         <%= link_to "#{current_user.username}", user_path(current_user) %>
+        <% else %>
+        <%= link_to "#{current_user.name}", user_path(current_user) %>
+        <% end %>
         </span>
         <span class="user-id">@<%= current_user.name %></span>
       </h4>
