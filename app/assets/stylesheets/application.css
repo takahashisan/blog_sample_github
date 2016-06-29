@@ -227,6 +227,37 @@
 }
 
 
+/*edit.html.erb(プロフ編集画面)*/
+
+
+.settings-content{
+    float:none;
+    margin: 0 auto 35px;
+}
+#settings-edit form{
+    border: 1px solid #ddd;
+    border-bottom-width: 3px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+.setting-name{
+    margin: 0px;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    font-size:18px;
+    font-weight: 600;
+}
+.form-body{
+    padding: 25px 30px;
+}
+.control-label{
+    font-weight: 400;
+}
+.btn{
+    width: 100%;
+    margin: 10px 0px;
+}
 
 
 

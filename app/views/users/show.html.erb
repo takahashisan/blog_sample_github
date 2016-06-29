@@ -2,7 +2,9 @@
   <div class="panel-body">
 
       <h4 class="user mypage-name">
-        <span class="user-name-prof"><%= link_to "#{current_user.username}", user_path(current_user) %></span>
+        <span class="user-name-prof">
+        <%= link_to "#{current_user.username}", user_path(current_user) %>
+        </span>
         <span class="user-id">@<%= current_user.name %></span>
       </h4>
 
@@ -73,7 +75,11 @@
      <%=link_to post_path(post) do %>
     <div class="tweet list-group-item" >
       <h4 class="user">
-        <object><span class="user-name"><%= link_to "#{current_user.username}", user_path(current_user) %></span></object>
+        <object><span class="user-name">
+
+        <%= link_to "#{current_user.username}", user_path(current_user) %>
+
+        </span></object>
         <span class="user-id">@<%= post.user.try(:name) %></span>
         <span class="time pull-right"><%= distance_of_time_in_words_to_now(post.created_at) %></span>
         </h4>
