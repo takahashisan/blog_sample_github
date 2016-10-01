@@ -20,7 +20,11 @@
 }
 
 /*nabvar*/
-
+.clearfix::after{
+    clear: both;
+    display: block;
+    content: "";
+}
 .navbar-default {
     background-color: #ebebeb;
     border-color: #dddddd;
@@ -29,8 +33,8 @@
     border-radius: 4px;
     position: relative;
     min-height: 50px;
-    margin-bottom: 30px;
     border: 1px solid block;
+    margin-bottom:0px; 
 }
 .navbar-header{
 	margin-left: -15px;
@@ -78,8 +82,11 @@
 }
 #application {
     background-color: #fbfbfb;
+    height: 100vh;
 }
-
+.yield{
+    height:100vh;
+}
 
 /*user*/
 
@@ -127,6 +134,10 @@
 
 
 /*post*/
+.time_line{
+      background-color: #fbfbfb;
+      height:1000px;
+}
 .text,.num,.body-text{
     color: #666;
     text-decoration: none;
@@ -150,6 +161,10 @@
     font-size: 12px;
     color: #aaa;
     font-weight: 400;
+}
+#tweets-content{
+    padding-top:30px;
+    height: 100vh;
 }
 .left-content .panel {
     box-shadow: none;
@@ -209,6 +224,46 @@
     background-color: #f9f9f9;
 }
 
+/*show.html.erb(post)*/
+
+
+.name-prof a:hover{
+    text-decoration: none;
+}
+.name-prof{
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    
+}
+#posts-content{
+    float: none;
+    margin: 0 auto;
+    margin-top:30px;
+    padding: 0px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    border-bottom-width: 3px;
+}
+.list-name{
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #dddddd;
+    text-align: center;
+    font-weight: bold;
+}
+.show_text{
+    text-align: center;
+    font-size: 20px;
+}
+.show_content{
+    padding-top: 20px;
+}
+.back{
+    text-align: center;
+}
+
 
 /*mypage*/
 
@@ -233,6 +288,8 @@
 .settings-content{
     float:none;
     margin: 0 auto 35px;
+    padding-top: 30px;
+
 }
 #settings-edit form{
     border: 1px solid #ddd;
@@ -297,7 +354,7 @@
 
 
 /*registration/new.html.erb(会員登録画面)*/
-#registrations{
+.registrations{
     background-image: url("back.jpg");
     background-position: center bottom;
     background-size: cover;
@@ -305,6 +362,7 @@
     background-repeat: no-repeat;
     background-color: #050911;
     background-attachment: fixed;
+    height: 100vh;
 }
 #registrations-new{
     width: 100%;
@@ -356,7 +414,11 @@
     text-decoration: underline;
 }
 
+.yield{
+    height:100vh;
+    background-color: #f5f5f5;
 
+}
 
 
 
