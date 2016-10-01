@@ -31,6 +31,8 @@ gem 'rmagick'
 
 gem 'kaminari'
 
+gem 'kaminari-bootstrap', '~> 3.0.1'
+
 gem 'acts-as-taggable-on', '~> 3.4'
 
 gem 'therubyracer'
@@ -53,6 +55,7 @@ group :development, :test do
   gem 'byebug'
   gem 'hirb'
   gem 'hirb-unicode'
+  gem 'pry-rails'
 end
 
 group :development do

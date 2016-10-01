@@ -1,17 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
-
- <% if current_user.id == @post.user.id %>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %> |
- <% end %>
-<%= link_to 'Back', posts_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6" id="posts-content">
+      <div class="list-group">
+        <div class="list-group-item">
+          <h3 class="list-name">投稿内容</h3>
+          <div class="list-group"> 
+            <p id="notice"><%= notice %></p>
+            <div class="show-content">
+              <p class="show_text"><%= @post.body %></p>
+              <!-- content-footer -->
+              　<P><%= link_to '編集', edit_post_path(@post),class: "btn btn-primary" %> 
+                <%= link_to '削除', @post, method: :delete,class: "btn btn-primary", data: { confirm: 'Are you sure?' } %> </P>
+                <p class="back"><%= link_to '戻る', posts_path %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

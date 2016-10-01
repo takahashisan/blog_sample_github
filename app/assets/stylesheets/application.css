@@ -13,3 +13,415 @@
  *= require_tree .
  *= require_self
  */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/*nabvar*/
+.clearfix::after{
+    clear: both;
+    display: block;
+    content: "";
+}
+.navbar-default {
+    background-color: #ebebeb;
+    border-color: #dddddd;
+}
+.navbar {
+    border-radius: 4px;
+    position: relative;
+    min-height: 50px;
+    border: 1px solid block;
+    margin-bottom:0px; 
+}
+.navbar-header{
+	margin-left: -15px;
+}
+.navbar-header p {
+    float: left;
+    padding: 15px 15px;
+    font-size: 28px;
+    line-height: 20px;
+    height: 50px;
+}
+.navbar a:hover{
+	text-decoration: none;
+	background: transparent;
+	color: #000;
+}
+.navbar-nav {
+    margin: 0;
+}
+.nav {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+.new-navbar{
+    float: left;
+    list-style-type: none;
+    margin-right: 100px;
+    font-size: 16px;
+}
+.list-group {
+    margin-bottom: 20px;
+    padding-left: 0;
+}
+.alert-info #notice{
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+#application {
+    background-color: #fbfbfb;
+    height: 100vh;
+}
+.yield{
+    height:100vh;
+}
+
+/*user*/
+
+.user-name-prof a:hover{
+    text-decoration: none;
+}
+.user-name-prof{
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    
+}
+.user-name{
+    font-size: 18px;
+    font-weight: 500;
+    color: #555;
+}
+.user-id{
+    font-size: 14px;
+    color: #aaa;
+    font-weight: 400;
+}
+
+#users-content{
+    float: none;
+    margin: 0 auto;
+    margin-top:30px;
+    padding: 0px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    border-bottom-width: 3px;
+}
+.user-list-name{
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dddddd;
+}
+.user-list-group{
+    position: relative;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+}
+
+
+/*post*/
+.time_line{
+      background-color: #fbfbfb;
+      height:1000px;
+}
+.text,.num,.body-text{
+    color: #666;
+    text-decoration: none;
+}
+.tweets-num{
+    padding: 5px 0;
+}
+.tweets-num:hover{
+    background-color: #f9f9f9;
+}
+.list-group-item{
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-bottom: none; 
+}
+.time{
+    font-size: 12px;
+    color: #aaa;
+    font-weight: 400;
+}
+#tweets-content{
+    padding-top:30px;
+    height: 100vh;
+}
+.left-content .panel {
+    box-shadow: none;
+    border-bottom-width: 3px;
+}
+.panel-default {
+    border-color: #dddddd;
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+}
+.num{
+    font-size: 18px;
+}
+.panel-body{
+    border-bottom: 1px solid #dddddd; 
+}
+.user-activity {
+    text-align: center;
+}
+.new-tweet {
+    margin-top: 20px;
+    padding: 0 10px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-controll {
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.btn {
+    margin-top: 10px;
+    width: 100%;
+}
+.page_area{
+    text-align: center;
+}
+.tweet:hover{
+    background-color: #f9f9f9;
+}
+
+/*show.html.erb(post)*/
+
+
+.name-prof a:hover{
+    text-decoration: none;
+}
+.name-prof{
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    
+}
+#posts-content{
+    float: none;
+    margin: 0 auto;
+    margin-top:30px;
+    padding: 0px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    border-bottom-width: 3px;
+}
+.list-name{
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #dddddd;
+    text-align: center;
+    font-weight: bold;
+}
+.show_text{
+    text-align: center;
+    font-size: 20px;
+}
+.show_content{
+    padding-top: 20px;
+}
+.back{
+    text-align: center;
+}
+
+
+/*mypage*/
+
+.mypage-name{
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+.mypage-tweets-num{
+    padding: 10px 0px;
+}
+.mypage-tweets-num:hover{
+    background-color: #ebebeb;
+}
+.mypage-list-group-item{
+    padding-top: 20px;
+}
+
+
+/*edit.html.erb(プロフ編集画面)*/
+
+
+.settings-content{
+    float:none;
+    margin: 0 auto 35px;
+    padding-top: 30px;
+
+}
+#settings-edit form{
+    border: 1px solid #ddd;
+    border-bottom-width: 3px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+.setting-name{
+    margin: 0px;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    font-size:18px;
+    font-weight: 600;
+}
+.form-body{
+    padding: 25px 30px;
+}
+.control-label{
+    font-weight: 400;
+}
+.btn{
+    width: 100%;
+    margin: 10px 0px;
+}
+
+
+/*sessions(new.html.erb) ログイン画面*/
+#sessions{
+    windows: 100%;
+    height:100%;
+    width:100%;
+    background-color: #f5f5f5;
+}
+
+#sessions-new{
+    vertical-align:middle;
+}
+.login-content{
+    padding-top:60px;
+    margin: 0 auto;
+    float: none;
+}
+#sessions-new form{
+    border: 1px solid #ddd;
+    border-bottom-width: 3px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+#sessions-new h2{
+    margin: 0px;
+    padding: 12px;
+    text-align:center;
+    border-bottom: 2px solid #ddd;
+    font-size:18px;
+    font-weight: 600;
+}
+.signup{
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+
+/*registration/new.html.erb(会員登録画面)*/
+.registrations{
+    background-image: url("back.jpg");
+    background-position: center bottom;
+    background-size: cover;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-color: #050911;
+    background-attachment: fixed;
+    height: 100vh;
+}
+#registrations-new{
+    width: 100%;
+    height: 100%;
+}
+#registrations-new .left-content{
+    margin-top: 45px;
+    padding: 0px 45px;
+    color: #fff;
+}
+#registrations-new h1{
+    text-shadow: 2px 2px 2px #fff;
+    font-size: 50px;
+    margin: 0px;
+    margin-top: 150px;
+
+}
+.px{
+    line-height:20px;
+    font-size: 18px;
+    padding:10px;
+    margin: 45px 0px;
+    text-align:center;
+}
+#registrations-new form{
+    margin: 50px 0px 20px 0px;
+    padding: 30px 35px;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    background-color: rgba(0,0,0,0.3);
+    color:#fff;
+}
+#registrations-new h2{
+    margin: 0px 0px 20px 0px;
+    padding: 30px 35px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 10px;
+    font-size: 20px; 
+}
+#registrations-new .btn{
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+#registrations-new .login{
+    color:#fff;
+    text-decoration: underline;
+}
+
+.yield{
+    height:100vh;
+    background-color: #f5f5f5;
+
+}
+
+
+
+
+
+

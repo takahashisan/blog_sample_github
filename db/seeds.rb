@@ -10,6 +10,8 @@
     Post.create!(
         user_id: rand(1..3),
         image: open("#{Rails.root}/app/assets/images/cat1.jpg"),
+        username: "名無しさん",
+        name: "abcdefg",
         title: "こんにちは",
         body: "#{i}回目のこんにちは"
     )

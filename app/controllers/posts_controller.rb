@@ -6,8 +6,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-      @posts = Post.page(params[:page]).per(10).order(created_at: :desc)
-      
+      @posts = Post.page(params[:page]).per(35).order(created_at: :desc)
+      @post = Post.new
 
   end
 
@@ -33,8 +33,8 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
+        format.html { redirect_to posts_url, notice: 'Post was successfully created.' }
+        format.json { render :index, status: :created, location: posts_url }
       else
         @posts = Post.all
         format.html { render :index }

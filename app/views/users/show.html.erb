@@ -1,26 +1,108 @@
-<ul>
-    <li>
-      <%= link_to user_path(@user) do %>
-        <div class="text">投稿数</div>
-        <div class="num"><%= @user.posts.count %></div>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to favorites_user_path(@user) do %>
-        <div class="text">いいね一覧</div>
-        <div class="num"><%= @user.favorites.count %></div>
-      <% end %>     
-    </li>
-</ul>
+<div class="container">
+<div class="row">
+<div class="col-xs-8" id="users-content">
+  <div class="panel-body">
 
-<% @user.posts.each do |post| %>
-    <h4 class="user">
-        <span class="user-name">
-          <%= link_to post.user.name, user_path(post.user) %>
+      <h4 class="user mypage-name">
+        <span class="user-name-prof">
+        <% if current_user.username.present? %>
+        <%= link_to "#{current_user.username}", user_path(current_user) %>
+        <% else %>
+        <%= link_to "#{current_user.name}", user_path(current_user) %>
+        <% end %>
         </span>
-    <span class="user-id"><%= post.user.name %></span>
-    </h4>
-    <div class="post-body">
-        <%= post.body %>
-    </div>  
-<% end %>
+        <span class="user-id">@<%= current_user.name %></span>
+      </h4>
+
+      <div class="user-activity mypage-user-activity">
+        <div class="row">
+
+          <div class="col-xs-3 mypage-tweets-num">
+          <%= link_to user_path(current_user) do %>
+            <div class="text">
+              つぶやき
+            </div>
+            <div class="num"> 
+              <%= current_user.posts.count %>
+            </div>
+            <% end %>
+          </div>
+
+          <div class="col-xs-3 mypage-tweets-num">
+          <%= link_to follows_user_path(current_user) do %>
+            <div class="text">
+              フォロー
+            </div>
+            <div class="num"> 
+              <%= current_user.followings.count %>
+            </div>
+            <% end %>
+          </div>
+
+          <div class="col-xs-3 mypage-tweets-num">
+          <%= link_to followers_user_path(current_user) do %>
+            <div class="text">
+              フォロワー
+            </div>
+            <div class="num"> 
+              <%= current_user.followers.count %>
+            </div>
+            <% end %>
+          </div>
+
+          <div class="col-xs-3 mypage-tweets-num">
+          <%= link_to favorites_user_path(current_user) do %>
+            <div class="text">
+              お気に入り
+            </div>
+            <div class="num"> 
+              <%= current_user.favorites.count %>
+            </div>
+            <% end %>
+          </div>
+
+         
+        </div><!-- row -->
+      </div><!-- user-activity -->
+    </div><!-- panel-body -->
+
+
+
+  <div class="list-group">
+    <div class="list-group-item mypage-list-group-item">
+    <% if @user.posts.empty? %>
+      まだツイートはありません
+    </div>
+    <% end %>
+
+    
+
+    <% @user.posts.each do |post| %>
+     <%=link_to post_path(post) do %>
+    <div class="tweet list-group-item" >
+      <h4 class="user">
+        <object><span class="user-name">
+
+        <%= link_to "#{current_user.username}", user_path(current_user) %>
+
+        </span></object>
+        <span class="user-id">@<%= post.user.try(:name) %></span>
+        <span class="time pull-right"><%= distance_of_time_in_words_to_now(post.created_at) %></span>
+        </h4>
+
+      <div class="tweet-content">
+          <p class="body-text"><%= post.body %></p>
+          <p><%= render 'posts/tag_list', tag_list: post.interest_list %></p>
+      </div>
+      </div>  
+    <% end %>
+    <% end %>
+
+  
+</div>
+</div>
+</div>
+
+
+
+

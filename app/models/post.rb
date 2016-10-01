@@ -4,8 +4,9 @@ class Post < ActiveRecord::Base
 	acts_as_taggable_on :tags  
 	acts_as_ordered_taggable_on :interests 
 	has_many :favorites, dependent: :destroy
+	
 
 	def favorited_by? user
-    favorites.where(user_id: user.id).exists?
-end
+	    favorites.where(user_id: user.try(:id)).exists?
+	end
 end

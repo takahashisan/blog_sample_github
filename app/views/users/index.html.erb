@@ -1,2 +1,43 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="container">
+<div class="row">
+
+<div class="col-xs-8" id="users-content">
+  <div class="list-group">
+    <div class="list-group-item user-list">
+      <h3 class="user-list-name">ユーザー一覧</h3>
+
+            <% @users.each do |user| %>
+        <div class="user-list-group"> 
+
+            <h4>
+                <span class="user-name">
+
+                <% if user.username.present? %>
+                <%= link_to user.username, user_path(user) %>
+                <% elsif user.name.blank? %>
+                <%= link_to "名無しさん", user_path(user) %>
+                <% else %>
+                <%= link_to user.name, user_path(user) %>
+                <% end %>
+                </span>
+                <span class="user-id">@<%= user.try(:name) %></span>
+            </h4>
+
+           
+            <div class="follow-unfollow">
+                <% if user.followed_by? current_user %>
+                  <%= link_to "フォロー解除", follows_user_path(user), method: :delete %>
+                <% else %>
+                  <%= link_to "フォロー", follows_user_path(user), method: :post %>
+                <% end %>
+            </div>
+        </div>
+             <% end %>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
